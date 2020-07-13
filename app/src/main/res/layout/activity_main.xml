@@ -18,7 +18,7 @@
         android:id="@+id/main_disconnected"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/internet"
+        android:text="@string/whithout_connection"
         android:textStyle="bold"
         android:textSize="30sp"/>
 

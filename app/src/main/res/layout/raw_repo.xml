@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/act_raw_repository_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Nome do Repositorio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/act_raw_description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="Descricao do repositorio bla bla bla bla bla bla bla bla"
+            app:layout_constraintStart_toStartOf="@+id/act_raw_repository_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/act_raw_repository_name_tv" />
+        <ImageView
+            android:id="@+id/act_raw_fork_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/act_raw_description_tv"
+            app:layout_constraintTop_toBottomOf="@+id/act_raw_description_tv"
+            app:srcCompat="?attr/actionModeShareDrawable" />
+        <TextView
+            android:id="@+id/act_raw_forkTotal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:text="1974"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@+id/act_raw_fork_icon"
+            app:layout_constraintTop_toTopOf="@+id/act_raw_fork_icon" />
+        <ImageView
+            android:id="@+id/act_raw_userAvatar_imageView"
+            android:layout_width="46dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/act_raw_description_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/act_raw_description_tv"
+            app:layout_constraintTop_toTopOf="@+id/act_raw_repository_name_tv" />
+        <TextView
+            android:id="@+id/act_raw_userLogin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mara"
+            app:layout_constraintStart_toStartOf="@+id/act_raw_userAvatar_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/act_raw_userAvatar_imageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
