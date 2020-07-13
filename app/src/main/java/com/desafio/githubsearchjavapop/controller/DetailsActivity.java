@@ -1,8 +1,10 @@
-package com.desafio.githubsearchjavapop;
+package com.desafio.githubsearchjavapop.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.desafio.githubsearchjavapop.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
