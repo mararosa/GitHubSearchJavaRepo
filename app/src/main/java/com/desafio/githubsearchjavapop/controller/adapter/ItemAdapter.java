@@ -13,14 +13,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.controller.DetailsActivity;
-import com.desafio.githubsearchjavapop.model.Item;
+import com.desafio.githubsearchjavapop.controller.adapter;import com.desafio.githubsearchjavapop.model.Item;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
+public class ItemAdapter extends RecyclerView.Adapter<adapter.ItemAdapter.ViewHolder> {
     private List<Item> items;
     private Context context;
 
@@ -31,18 +31,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @NonNull
     @Override
-    public ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public adapter.ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_repo, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull adapter.ItemAdapter.ViewHolder holder, int position) {
         holder.repoName.setText(items.get(position).getRepoName());
         holder.description.setText(items.get(position).getDescription());
         holder.forks.setText(items.get(position).getForksCount());
         holder.stars.setText(items.get(position).getStargazersCount());
-        holder.userLogin.setText(items.get(position).getLogin());
+        holder.userLogin.setText(items.get(position).());
         holder.githubLink.setText(items.get(position).getHtmlUrl());
 
         Picasso.with(context)
