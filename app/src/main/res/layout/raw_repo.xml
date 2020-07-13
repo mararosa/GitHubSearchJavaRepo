@@ -51,7 +51,7 @@
             android:textSize="18dp"
             app:layout_constraintStart_toEndOf="@+id/act_raw_fork_icon"
             app:layout_constraintTop_toTopOf="@+id/act_raw_fork_icon" />
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/act_raw_userAvatar_imageView"
             android:layout_width="46dp"
             android:layout_height="52dp"
