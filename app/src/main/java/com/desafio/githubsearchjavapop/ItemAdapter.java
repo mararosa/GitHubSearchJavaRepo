@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.model.Item;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -33,8 +34,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.ViewHolder holder, int position) {
+        holder.githubLink.setText(items.get(position).getHtmlUrl());
+        holder.repoName.setText(items.get(position).getRepoName());
+        holder.description.setText(items.get(position).getDescription());
+        holder.forks.setText(items.get(position).getForksCount());
+        holder.stars.setText(items.get(position).getStargazersCount());
+        holder.userLogin.setText(items.get(position).getLogin());
 
+        Picasso.with(context)
+                .load(items.get(position).getAvatarUrl())
+                .placeholder(R.drawable.loading)
+                .into(holder.userAvatar);
     }
+
 
     @Override
     public int getItemCount() {
