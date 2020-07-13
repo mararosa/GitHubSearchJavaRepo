@@ -11,6 +11,7 @@ public class ItemResponse {
     private List<Item> items;
 
     public List<Item> getItems() {
+        //for int i = 0; a.length i++
         return items;
     }
 

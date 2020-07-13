@@ -18,13 +18,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
+import de.hdodenhof.circleimageview.CircleImageView;
 
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private List<Item> items;
     private Context context;
 
-    public ItemAdapter(Context applicationContext, List<Item> itemArrayList) {
-        this.context = applicationContext;
+    public ItemAdapter(Context getApplicationContext, List<Item> itemArrayList) {
+        this.context = getApplicationContext;
         this.items = itemArrayList;
     }
 
@@ -37,12 +38,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.ViewHolder holder, int position) {
-        holder.githubLink.setText(items.get(position).getHtmlUrl());
         holder.repoName.setText(items.get(position).getRepoName());
         holder.description.setText(items.get(position).getDescription());
         holder.forks.setText(items.get(position).getForksCount());
         holder.stars.setText(items.get(position).getStargazersCount());
         holder.userLogin.setText(items.get(position).getLogin());
+        holder.githubLink.setText(items.get(position).getHtmlUrl());
 
         Picasso.with(context)
                 .load(items.get(position).getAvatarUrl())

@@ -3,8 +3,9 @@ package com.desafio.githubsearchjavapop.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Item {
+import java.util.ArrayList;
 
+public class Item {
     @SerializedName("name")
     @Expose
     private String repoName;
@@ -12,14 +13,6 @@ public class Item {
     @SerializedName("description")
     @Expose
     private String description;
-
-    @SerializedName("login")
-    @Expose
-    private String login;
-
-    @SerializedName("avatar_url")
-    @Expose
-    private String avatarUrl;
 
     @SerializedName("forks_count")
     @Expose
@@ -29,18 +22,16 @@ public class Item {
     @Expose
     private String stargazersCount;
 
-    @SerializedName("html_url")
+    @SerializedName("owner")
     @Expose
-    private String htmlUrl;
+    private ArrayList owner;
 
-    public Item(String repoName, String description, String login, String avatarUrl, String forksCount, String stargazersCount, String htmlUrl) {
+    public Item(String repoName, String description, String forksCount, String stargazersCount, ArrayList owner) {
         this.repoName = repoName;
         this.description = description;
-        this.login = login;
-        this.avatarUrl = avatarUrl;
         this.forksCount = forksCount;
         this.stargazersCount = stargazersCount;
-        this.htmlUrl = htmlUrl;
+        this.owner = owner;
     }
 
     public String getRepoName() {
@@ -59,22 +50,6 @@ public class Item {
         this.description = description;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
     public String getForksCount() {
         return forksCount;
     }
@@ -91,11 +66,11 @@ public class Item {
         this.stargazersCount = stargazersCount;
     }
 
-    public String getHtmlUrl() {
-        return htmlUrl;
+    public ArrayList getOwner() {
+        return owner;
     }
 
-    public void setHtmlUrl(String htmlUrl) {
-        this.htmlUrl = htmlUrl;
+    public void setOwner(ArrayList owner) {
+        this.owner = owner;
     }
 }

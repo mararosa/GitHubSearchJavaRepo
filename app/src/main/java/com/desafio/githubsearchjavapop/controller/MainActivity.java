@@ -51,13 +51,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 loadJson();
+                Toast.makeText(MainActivity.this, "GitHub Repo Refreshed", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void initViews() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Fetching Github users...");
+        progressDialog.setMessage("Fetching Github repositories...");
         progressDialog.setCancelable(false);
         progressDialog.show();
         recyclerView = findViewById(R.id.recyclerView);
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadJson() {
         disconnected = findViewById(R.id.main_disconnected);
         try {
+            Client client = new Client();
             Service apiService = Client.getClients().create(Service.class);
             Call<ItemResponse> call = apiService.getItems();
             call.enqueue(new Callback<ItemResponse>() {
