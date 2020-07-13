@@ -1,15 +1,18 @@
 package com.desafio.githubsearchjavapop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.desafio.githubsearchjavapop.controller.DetailsActivity;
 import com.desafio.githubsearchjavapop.model.Item;
 import com.squareup.picasso.Picasso;
 
@@ -47,14 +50,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 .into(holder.userAvatar);
     }
 
-
     @Override
     public int getItemCount() {
         return items.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView githubLink, repoName, description, forks, stars, userLogin,
+        private TextView githubLink, repoName, description, forks, stars, userLogin;
         private ImageView userAvatar;
 
         public ViewHolder(@NonNull View view) {
@@ -66,6 +68,29 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             stars = view.findViewById(R.id.act_row_starsTotal_tv);
             userLogin = view.findViewById(R.id.act_row_userLogin_tv);
             userAvatar = view.findViewById(R.id.act_row_userAvatar_imageView);
-        }
 
+            //on item click
+            itemView.setOnClickListener((new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        Item clickedDataItem = items.get(position);
+                        Intent intent = new Intent(context, DetailsActivity.class);
+                        intent.putExtra("name", items.get(position).getRepoName());
+                        intent.putExtra("description", items.get(position).getDescription());
+                        intent.putExtra("login", items.get(position).getLogin());
+                        intent.putExtra("avatar_url", items.get(position).getAvatarUrl());
+                        intent.putExtra("forks_count", items.get(position).getForksCount());
+                        intent.putExtra("stargazers_count", items.get(position).getStargazersCount());
+                        intent.putExtra("html_url", items.get(position).getHtmlUrl());
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(intent);
+                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getLogin(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }));
         }
+    }
+}
+
