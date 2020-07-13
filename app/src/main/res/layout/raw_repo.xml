@@ -51,6 +51,26 @@
             android:textSize="18dp"
             app:layout_constraintStart_toEndOf="@+id/act_raw_fork_icon"
             app:layout_constraintTop_toTopOf="@+id/act_raw_fork_icon" />
+        <ImageView
+            android:id="@+id/act_raw_stars_icon"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toEndOf="@+id/act_raw_forkTotal_tv"
+            app:layout_constraintTop_toTopOf="@+id/act_raw_forkTotal_tv"
+            app:srcCompat="@drawable/ic_star"
+            tools:ignore="VectorDrawableCompat" />
+        <TextView
+            android:id="@+id/act_raw_starsTotal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:text="350"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@+id/act_raw_stars_icon"
+            app:layout_constraintTop_toTopOf="@+id/act_raw_stars_icon" />
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/act_raw_userAvatar_imageView"
             android:layout_width="46dp"
