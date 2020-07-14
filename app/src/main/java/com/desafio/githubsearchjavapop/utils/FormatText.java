@@ -7,12 +7,12 @@ import java.util.Date;
 public class FormatText {
 
     public static String formatDate(String date){
-        SimpleDateFormat serverType = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        SimpleDateFormat userType = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat apiType = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat presentationType = new SimpleDateFormat("dd/MM/yyyy");
         String formatDate = "";
         try {
-            Date dateT = serverType.parse(date);
-            formatDate = userType.format(dateT);
+            Date dateT = apiType.parse(date);
+            formatDate = presentationType.format(dateT);
         } catch (ParseException e) {
 
         }
