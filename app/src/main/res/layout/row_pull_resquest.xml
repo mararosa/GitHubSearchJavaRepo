@@ -36,7 +36,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:text="Descricao do pull request bla bla bla bla bla bla bla bla"
-            android:textSize="14sp"
+            android:textSize="9sp"
             app:layout_constraintEnd_toEndOf="@+id/act_rowPull_pr_title_tv"
             app:layout_constraintStart_toStartOf="@+id/act_rowPull_pr_title_tv"
             app:layout_constraintTop_toBottomOf="@+id/act_rowPull_pr_title_tv" />
@@ -59,18 +59,21 @@
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="16dp"
             android:text="Mara"
-            android:textSize="28dp"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/act_rowPull_userAvatar_imageView"
             app:layout_constraintTop_toTopOf="@+id/act_rowPull_userAvatar_imageView" />
+
         <TextView
             android:id="@+id/act_rowPull_datePR_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:text="12/12/2020"
-            app:layout_constraintBottom_toBottomOf="@+id/act_rowPull_userLogin_tv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/act_rowPull_descriptionPR_tv" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

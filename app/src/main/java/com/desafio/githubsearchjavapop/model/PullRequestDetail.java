@@ -3,7 +3,7 @@ package com.desafio.githubsearchjavapop.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class PullDetail {
+public class PullRequestDetail {
     @SerializedName("title")
     @Expose
     private String title;
@@ -21,7 +21,7 @@ public class PullDetail {
     private User user;
 
 
-    public PullDetail(String title, String body, String created_at, User user, String avatarUrl) {
+    public PullRequestDetail(String title, String body, String created_at, User user, String avatarUrl) {
         this.title = title;
         this.body = body;
         this.created_at = created_at;

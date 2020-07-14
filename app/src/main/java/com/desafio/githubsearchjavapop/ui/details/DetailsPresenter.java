@@ -1,7 +1,7 @@
 package com.desafio.githubsearchjavapop.ui.details;
 
 import com.desafio.githubsearchjavapop.data.GithubPull;
-import com.desafio.githubsearchjavapop.model.PullDetail;
+import com.desafio.githubsearchjavapop.model.PullRequestDetail;
 import com.desafio.githubsearchjavapop.utils.Callback;
 
 import java.util.List;
@@ -22,9 +22,9 @@ public class DetailsPresenter  implements DetailsContract.Presenter{
 
     private void loadGithubRepository(String login, String repoName){
         view.showLoading();
-        mGithubPull.getPullRequest(login, repoName, new Callback<List<PullDetail>>() {
+        mGithubPull.getPullRequest(login, repoName, new Callback<List<PullRequestDetail>>() {
             @Override
-            public void onCompleted(List<PullDetail> data) {
+            public void onCompleted(List<PullRequestDetail> data) {
                 view.showGithubRepositories(data);
                 view.hideLoading();
             }

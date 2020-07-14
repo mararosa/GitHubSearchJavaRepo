@@ -7,7 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.R;
-import com.desafio.githubsearchjavapop.model.PullDetail;
+import com.desafio.githubsearchjavapop.model.PullRequestDetail;
+import com.desafio.githubsearchjavapop.utils.FormatText;
 import com.desafio.githubsearchjavapop.utils.OnItemClickedListener;
 import com.squareup.picasso.Picasso;
 
@@ -31,14 +32,14 @@ public class PullViewHolder extends RecyclerView.ViewHolder{
         userAvatar = view.findViewById(R.id.act_rowPull_userAvatar_imageView);
     }
 
-    public void onUpdateData(final PullDetail pullDetail){
-        title.setText(pullDetail.getTitle());
-        pullBody.setText(pullDetail.getBody());
-        date.setText(pullDetail.getCreated_at());
-        login.setText(pullDetail.getUser().getName());
+    public void onUpdateData(final PullRequestDetail pullRequestDetail){
+        title.setText(pullRequestDetail.getTitle());
+        pullBody.setText(pullRequestDetail.getBody());
+        date.setText(FormatText.formatDate(pullRequestDetail.getCreated_at()));
+        login.setText(pullRequestDetail.getUser().getName());
 
         Picasso.with(itemView.getContext())
-                .load(pullDetail.getUser().getAvatarUrl())
+                .load(pullRequestDetail.getUser().getAvatarUrl())
                 .placeholder(R.drawable.loading)
                 .into(userAvatar);
     }

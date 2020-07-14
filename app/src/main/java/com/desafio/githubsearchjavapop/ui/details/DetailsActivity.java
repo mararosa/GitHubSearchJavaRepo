@@ -13,7 +13,7 @@ import com.desafio.githubsearchjavapop.R;
 import com.desafio.githubsearchjavapop.data.remote.api.ApiClient;
 import com.desafio.githubsearchjavapop.data.remote.api.GetPullRequest;
 import com.desafio.githubsearchjavapop.data.GithubPullImpl;
-import com.desafio.githubsearchjavapop.model.PullDetail;
+import com.desafio.githubsearchjavapop.model.PullRequestDetail;
 import com.desafio.githubsearchjavapop.ui.details.adapter.PullRequestAdapter;
 
 import java.util.List;
@@ -48,8 +48,8 @@ public class DetailsActivity extends AppCompatActivity implements DetailsContrac
     }
 
     @Override
-    public void showGithubRepositories(List<PullDetail> pullDetails) {
-        mPullRequestAdapter.replaceData(pullDetails);
+    public void showGithubRepositories(List<PullRequestDetail> pullRequestDetails) {
+        mPullRequestAdapter.replaceData(pullRequestDetails);
     }
 
     @Override

@@ -9,13 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.R;
-import com.desafio.githubsearchjavapop.model.PullDetail;
+import com.desafio.githubsearchjavapop.model.PullRequestDetail;
 import com.desafio.githubsearchjavapop.utils.OnItemClickedListener;
 
 import java.util.List;
 
 public class PullRequestAdapter extends RecyclerView.Adapter<PullViewHolder> {
-    private List<PullDetail> mPullDetailLists = null;
+    private List<PullRequestDetail> mPullRequestDetailLists = null;
     private Context context;
     private OnItemClickedListener mListener;
 
@@ -28,9 +28,9 @@ public class PullRequestAdapter extends RecyclerView.Adapter<PullViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PullViewHolder holder, int position) {
-        if(mPullDetailLists != null) {
+        if(mPullRequestDetailLists != null) {
             holder.setOnClickedListener(mListener);
-            holder.onUpdateData(mPullDetailLists.get(position));
+            holder.onUpdateData(mPullRequestDetailLists.get(position));
         }
         else{
             //TODO
@@ -40,11 +40,11 @@ public class PullRequestAdapter extends RecyclerView.Adapter<PullViewHolder> {
     @Override
     public int getItemCount()
     {
-        return mPullDetailLists!=null?mPullDetailLists.size():0;
+        return mPullRequestDetailLists !=null? mPullRequestDetailLists.size():0;
     }
 
-    public void replaceData(List<PullDetail> pullDetails) {
-        this.mPullDetailLists = pullDetails;
+    public void replaceData(List<PullRequestDetail> pullRequestDetails) {
+        this.mPullRequestDetailLists = pullRequestDetails;
 
         notifyDataSetChanged();
     }

@@ -3,7 +3,7 @@ package com.desafio.githubsearchjavapop.data;
 import android.util.Log;
 
 import com.desafio.githubsearchjavapop.data.remote.api.GetPullRequest;
-import com.desafio.githubsearchjavapop.model.PullDetail;
+import com.desafio.githubsearchjavapop.model.PullRequestDetail;
 import com.desafio.githubsearchjavapop.utils.Callback;
 
 import java.util.List;
@@ -20,18 +20,18 @@ public class GithubPullImpl implements GithubPull {
     }
 
     @Override
-    public void getPullRequest(String login, String repoName, final Callback<List<PullDetail>> callback) {
+    public void getPullRequest(String login, String repoName, final Callback<List<PullRequestDetail>> callback) {
         try {
-            Call<List<PullDetail>> call = mGetPullRequest.getPullRequest(login, repoName);
-            call.enqueue(new retrofit2.Callback<List<PullDetail>>(){
+            Call<List<PullRequestDetail>> call = mGetPullRequest.getPullRequest(login, repoName);
+            call.enqueue(new retrofit2.Callback<List<PullRequestDetail>>(){
                 @Override
-                public void onResponse(Call<List<PullDetail>> call, Response<List<PullDetail>> response) {
-                    List<PullDetail> detailList = response.body();
+                public void onResponse(Call<List<PullRequestDetail>> call, Response<List<PullRequestDetail>> response) {
+                    List<PullRequestDetail> detailList = response.body();
                     callback.onCompleted(detailList);
                 }
 
                 @Override
-                public void onFailure(Call<List<PullDetail>> call, Throwable t) {
+                public void onFailure(Call<List<PullRequestDetail>> call, Throwable t) {
                     Log.d("Fail", t.getMessage());
                     callback.onError();
                 }
