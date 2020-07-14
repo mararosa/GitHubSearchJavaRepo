@@ -8,14 +8,14 @@ import java.util.List;
 public class ItemResponse {
     @SerializedName("items")
     @Expose
-    private List<Item> items;
+    private List<RepositoryDetail> mRepositoryDetails;
 
-    public List<Item> getItems() {
+    public List<RepositoryDetail> getRepositoryDetails() {
         //for int i = 0; a.length i++
-        return items;
+        return mRepositoryDetails;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setRepositoryDetails(List<RepositoryDetail> repositoryDetails) {
+        this.mRepositoryDetails = repositoryDetails;
     }
 }

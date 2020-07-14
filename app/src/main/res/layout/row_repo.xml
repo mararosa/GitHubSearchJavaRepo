@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:text="Github Link"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/act_row_forkTotal_tv" />
@@ -33,19 +32,22 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="8dp"
             android:text="Nome do Repositorio"
+            android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/act_row_userAvatar_imageView" />
 
         <TextView
             android:id="@+id/act_row_description_tv"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:text="Descricao do repositorio bla bla bla bla bla bla bla bla"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/act_row_repository_name_tv" />
 
@@ -91,10 +93,13 @@
             app:layout_constraintStart_toEndOf="@+id/act_row_stars_icon"
             app:layout_constraintTop_toTopOf="@+id/act_row_stars_icon" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/act_row_userAvatar_imageView"
-            android:layout_width="131dp"
+            android:layout_width="80dp"
             android:layout_height="68dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,11 +107,13 @@
             android:id="@+id/act_row_userLogin_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:text="Mara"
+            android:textSize="28dp"
+            app:layout_constraintBottom_toBottomOf="@+id/act_row_userAvatar_imageView"
             app:layout_constraintEnd_toStartOf="@+id/act_row_userAvatar_imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/act_row_userAvatar_imageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

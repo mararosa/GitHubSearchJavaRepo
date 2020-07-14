@@ -1,11 +1,11 @@
-package com.desafio.githubsearchjavapop.api;
+package com.desafio.githubsearchjavapop.data.remote.api;
 
 import com.desafio.githubsearchjavapop.model.ItemResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface Service {
+public interface GithubRestApi {
     @GET("/search/repositories?q=language:Java&sort=forks&order=desc")
     Call<ItemResponse> getItems();
 }

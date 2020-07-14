@@ -20,12 +20,6 @@ public class Owner {
     public Owner() {
     }
 
-    public Owner(String login, String avatarUrl, String htmlUrl) {
-        this.login = login;
-        this.avatarUrl = avatarUrl;
-        this.htmlUrl = htmlUrl;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -47,6 +41,12 @@ public class Owner {
     }
 
     public void setHtmlUrl(String htmlUrl) {
+        this.htmlUrl = htmlUrl;
+    }
+
+    public Owner(String login, String avatarUrl, String htmlUrl) {
+        this.login = login;
+        this.avatarUrl = avatarUrl;
         this.htmlUrl = htmlUrl;
     }
 }

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class Item {
+public class RepositoryDetail {
     @SerializedName("name")
     @Expose
     private String repoName;
@@ -24,9 +24,9 @@ public class Item {
 
     @SerializedName("owner")
     @Expose
-    private ArrayList owner;
+    private Owner owner;
 
-    public Item(String repoName, String description, String forksCount, String stargazersCount, ArrayList owner) {
+    public RepositoryDetail(String repoName, String description, String forksCount, String stargazersCount, Owner owner) {
         this.repoName = repoName;
         this.description = description;
         this.forksCount = forksCount;
@@ -66,11 +66,11 @@ public class Item {
         this.stargazersCount = stargazersCount;
     }
 
-    public ArrayList getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 
-    public void setOwner(ArrayList owner) {
+    public void setOwner(Owner owner) {
         this.owner = owner;
     }
 }

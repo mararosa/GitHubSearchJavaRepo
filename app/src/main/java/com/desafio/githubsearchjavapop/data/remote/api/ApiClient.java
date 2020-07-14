@@ -1,9 +1,9 @@
-package com.desafio.githubsearchjavapop.api;
+package com.desafio.githubsearchjavapop.data.remote.api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Client {
+public class ApiClient {
 
     public static final String BASE_URL = " https://api.github.com";
     public static Retrofit retrofit = null;

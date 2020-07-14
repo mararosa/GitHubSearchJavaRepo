@@ -1,11 +1,9 @@
 package com.desafio.githubsearchjavapop.controller;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ShareCompat;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,8 +19,6 @@ import com.bumptech.glide.Glide;
 import com.desafio.githubsearchjavapop.R;
 
 import java.util.Objects;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 import static java.util.Objects.requireNonNull;
 
@@ -47,6 +43,9 @@ public class DetailsActivity extends AppCompatActivity {
         String userLogin = getIntent().getExtras().getString("login");
         String avatarUrl = getIntent().getExtras().getString("avatar_url");
         String link = getIntent().getExtras().getString("html_url");
+        String repoName = getIntent().getExtras().getString("name");
+//
+//        ApiClient.getPullRequests(userLogin, repoName);
 
         userLink.setText(link);
         Linkify.addLinks(userLink, Linkify.WEB_URLS);
@@ -56,7 +55,7 @@ public class DetailsActivity extends AppCompatActivity {
                 .load(avatarUrl)
                 .into(userAvatar);
 
-        getSupportActionBar().setTitle("Details Activity");
+        getSupportActionBar().setTitle("Developer Name");
     }
 
     private Intent createShareForcastIntent() {
