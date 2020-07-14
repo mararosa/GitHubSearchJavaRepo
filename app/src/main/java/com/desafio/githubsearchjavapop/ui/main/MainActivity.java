@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.R;
 import com.desafio.githubsearchjavapop.data.remote.api.ApiClient;
-import com.desafio.githubsearchjavapop.data.remote.api.GithubRestApi;
-import com.desafio.githubsearchjavapop.controller.DetailsActivity;
+import com.desafio.githubsearchjavapop.data.remote.api.GetGithubRepositoriesApi;
+import com.desafio.githubsearchjavapop.ui.details.DetailsActivity;
 import com.desafio.githubsearchjavapop.ui.main.adapter.RepositoryAdapter;
 import com.desafio.githubsearchjavapop.data.GithubRepositoryImpl;
 import com.desafio.githubsearchjavapop.model.RepositoryDetail;
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GithubRestApi githubRestApi = ApiClient.getClients().create(GithubRestApi.class);
-        presenter = new MainPresenter(this, new GithubRepositoryImpl(githubRestApi));
+        GetGithubRepositoriesApi getGithubRepositoriesApi = ApiClient.getClients().create(GetGithubRepositoriesApi.class);
+        presenter = new MainPresenter(this, new GithubRepositoryImpl(getGithubRepositoriesApi));
 
         initView();
         presenter.onInit();

@@ -11,7 +11,6 @@ public class ItemResponse {
     private List<RepositoryDetail> mRepositoryDetails;
 
     public List<RepositoryDetail> getRepositoryDetails() {
-        //for int i = 0; a.length i++
         return mRepositoryDetails;
     }
 

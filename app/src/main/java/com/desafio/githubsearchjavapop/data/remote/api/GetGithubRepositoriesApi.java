@@ -5,7 +5,7 @@ import com.desafio.githubsearchjavapop.model.ItemResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface GithubRestApi {
+public interface GetGithubRepositoriesApi {
     @GET("/search/repositories?q=language:Java&sort=forks&order=desc")
     Call<ItemResponse> getItems();
 }

@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface GithubRepository {
     void getRepositories(Callback<List<RepositoryDetail>> callback);
-    void getPullRequest(String login, String repoName, Callback<List<PullRequestDetail>> callback);
 }

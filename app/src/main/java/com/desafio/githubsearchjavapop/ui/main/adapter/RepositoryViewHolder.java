@@ -1,15 +1,12 @@
 package com.desafio.githubsearchjavapop.ui.main.adapter;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.R;
-import com.desafio.githubsearchjavapop.controller.DetailsActivity;
 import com.desafio.githubsearchjavapop.model.RepositoryDetail;
 import com.desafio.githubsearchjavapop.utils.OnItemClickedListener;
 import com.squareup.picasso.Picasso;
@@ -28,12 +25,12 @@ public class RepositoryViewHolder extends RecyclerView.ViewHolder {
     public RepositoryViewHolder(@NonNull final View view) {
         super(view);
         githubLink = view.findViewById(R.id.act_row_githubLink_tv);
-        repoName = view.findViewById(R.id.act_row_repository_name_tv);
-        description = view.findViewById(R.id.act_row_description_tv);
+        repoName = view.findViewById(R.id.act_rowPull_pr_title_tv);
+        description = view.findViewById(R.id.act_rowPull_descriptionPR_tv);
         forks = view.findViewById(R.id.act_row_forkTotal_tv);
         stars = view.findViewById(R.id.act_row_starsTotal_tv);
-        userLogin = view.findViewById(R.id.act_row_userLogin_tv);
-        userAvatar = view.findViewById(R.id.act_row_userAvatar_imageView);
+        userLogin = view.findViewById(R.id.act_rowPull_userLogin_tv);
+        userAvatar = view.findViewById(R.id.act_rowPull_userAvatar_imageView);
     }
 
     public void onUpdateData(final RepositoryDetail repositoryDetail){

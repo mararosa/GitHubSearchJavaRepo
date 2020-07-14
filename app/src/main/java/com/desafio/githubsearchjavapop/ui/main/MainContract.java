@@ -9,15 +9,11 @@ public interface MainContract {
         void showGithubRepositories(List<RepositoryDetail> repositoryDetails);
         void showLoading();
         void hideLoading();
-
         void showError();
-
         void openRepositoryDetailScreen(RepositoryDetail repositoryDetail);
     }
     public interface Presenter {
-
         void onInit();
-
         void onItemClicked(RepositoryDetail repositoryDetail);
     }
     

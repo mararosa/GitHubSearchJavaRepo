@@ -27,7 +27,7 @@
             app:layout_constraintTop_toBottomOf="@+id/act_row_forkTotal_tv" />
 
         <TextView
-            android:id="@+id/act_row_repository_name_tv"
+            android:id="@+id/act_rowPull_pr_title_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -37,10 +37,10 @@
             android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/act_row_userAvatar_imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/act_rowPull_userAvatar_imageView" />
 
         <TextView
-            android:id="@+id/act_row_description_tv"
+            android:id="@+id/act_rowPull_descriptionPR_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -49,7 +49,7 @@
             android:text="Descricao do repositorio bla bla bla bla bla bla bla bla"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/act_row_repository_name_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/act_rowPull_pr_title_tv" />
 
         <ImageView
             android:id="@+id/act_row_fork_icon"
@@ -59,7 +59,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/act_row_description_tv"
+            app:layout_constraintTop_toBottomOf="@+id/act_rowPull_descriptionPR_tv"
             app:srcCompat="?attr/actionModeShareDrawable" />
         <TextView
             android:id="@+id/act_row_forkTotal_tv"
@@ -94,7 +94,7 @@
             app:layout_constraintTop_toTopOf="@+id/act_row_stars_icon" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/act_row_userAvatar_imageView"
+            android:id="@+id/act_rowPull_userAvatar_imageView"
             android:layout_width="80dp"
             android:layout_height="68dp"
             android:layout_marginTop="16dp"
@@ -104,16 +104,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/act_row_userLogin_tv"
+            android:id="@+id/act_rowPull_userLogin_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:text="Mara"
             android:textSize="28dp"
-            app:layout_constraintBottom_toBottomOf="@+id/act_row_userAvatar_imageView"
-            app:layout_constraintEnd_toStartOf="@+id/act_row_userAvatar_imageView"
-            app:layout_constraintTop_toTopOf="@+id/act_row_userAvatar_imageView" />
+            app:layout_constraintBottom_toBottomOf="@+id/act_rowPull_userAvatar_imageView"
+            app:layout_constraintEnd_toStartOf="@+id/act_rowPull_userAvatar_imageView"
+            app:layout_constraintTop_toTopOf="@+id/act_rowPull_userAvatar_imageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
