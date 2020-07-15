@@ -14,7 +14,7 @@ public class FormatText {
             Date dateT = apiType.parse(date);
             formatDate = presentationType.format(dateT);
         } catch (ParseException e) {
-
+            e.getMessage();
         }
         return formatDate;
     }
