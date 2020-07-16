@@ -2,10 +2,15 @@ package com.desafio.githubsearchjavapop.ui.main;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private RecyclerView recyclerView;
     private RepositoryAdapter mRepositoryAdapter;
     private ProgressDialog progressDialog;
+    private Toolbar mainToolbar;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         presenter.onInit();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void initView() {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -55,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 presenter.onItemClicked(repositoryDetail);
             }
         });
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        mainToolbar = findViewById(R.id.toolbar_base);
+        mainToolbar.setTitle("Java Repositories");
+        mainToolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(mainToolbar);
     }
 
     @Override

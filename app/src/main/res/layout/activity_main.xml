@@ -5,13 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".ui.main.MainActivity"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_base"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:showIn="@layout/activity_main"
-        tools:context=".ui.main.MainActivity"/>
+        />
 
 </LinearLayout>

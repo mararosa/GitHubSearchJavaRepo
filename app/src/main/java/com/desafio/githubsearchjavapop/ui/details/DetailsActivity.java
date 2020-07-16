@@ -2,10 +2,12 @@ package com.desafio.githubsearchjavapop.ui.details;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class DetailsActivity extends AppCompatActivity implements DetailsContrac
     private RecyclerView recyclerView;
     private PullRequestAdapter mPullRequestAdapter;
     private ProgressDialog progressDialog;
+    private Toolbar detailsToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +48,14 @@ public class DetailsActivity extends AppCompatActivity implements DetailsContrac
         recyclerView.smoothScrollToPosition(0);
         mPullRequestAdapter = new PullRequestAdapter();
         recyclerView.setAdapter(mPullRequestAdapter);
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        detailsToolbar = findViewById(R.id.toolbar_base);
+        detailsToolbar.setTitle("Pull Requests");
+        detailsToolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(detailsToolbar);
     }
 
     @Override
