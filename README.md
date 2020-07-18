@@ -2,7 +2,7 @@
 
 Sample project that display Java repositories according with the number of forks, contributor details and pull requests details.
 
-## Ficha técnica
+## DataSheet
 
 - App Java Pop development with Java.
 - Types of layouts used: LinearLayout, ConstraintLayout, CardViewLayout.
