@@ -22,7 +22,7 @@ public class PullRequestAdapter extends RecyclerView.Adapter<PullViewHolder> {
     @NonNull
     @Override
     public PullViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_pull_resquest, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_pull_resquest, parent, false);
         return new PullViewHolder(view);
     }
 

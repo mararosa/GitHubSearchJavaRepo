@@ -8,6 +8,6 @@
     android:background="@color/orangeItau"
     android:minHeight="?actionBarSize"
     app:theme="@style/ToolbarTheme"
-    >
+    android:layout_gravity="center_horizontal">
 
 </androidx.appcompat.widget.Toolbar>

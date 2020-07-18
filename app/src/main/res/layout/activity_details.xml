@@ -13,5 +13,5 @@
         android:id="@+id/pull_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/row_pull_resquest"/>
+        tools:listitem="@layout/lista_pull_resquest"/>
 </LinearLayout>
