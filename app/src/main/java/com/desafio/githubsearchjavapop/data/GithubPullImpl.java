@@ -32,12 +32,12 @@ public class GithubPullImpl implements GithubPull {
 
                 @Override
                 public void onFailure(Call<List<PullRequestDetail>> call, Throwable t) {
-                    Log.d("Fail", t.getMessage());
+                    Log.e("onFailure error", t.getMessage());
                     callback.onError();
                 }
             });
         } catch (Exception e) {
-            Log.d("Error", e.getMessage());
+            Log.e("Error", e.getMessage());
             callback.onError();
         }
     }

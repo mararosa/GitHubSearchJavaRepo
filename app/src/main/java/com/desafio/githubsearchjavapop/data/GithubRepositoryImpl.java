@@ -34,12 +34,12 @@ public class GithubRepositoryImpl implements GithubRepository {
 
                 @Override
                 public void onFailure(Call<ItemResponse> call, Throwable t) {
-                    Log.d("Error", t.getMessage());
+                    Log.e("onFailure error", t.getMessage());
                     callback.onError();
                 }
             });
         } catch (Exception e) {
-            Log.d ("Error", e.getMessage());
+            Log.e ("Error", e.getMessage());
             callback.onError();
         }
     }
