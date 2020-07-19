@@ -37,7 +37,7 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryViewHolder
             holder.onUpdateData(mRepositoryDetails.get(position));
         }
         else{
-            //TODO
+            //TODO criar exception NullPointerException
         }
     }
 
