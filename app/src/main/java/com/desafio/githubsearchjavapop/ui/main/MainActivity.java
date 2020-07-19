@@ -3,7 +3,6 @@ package com.desafio.githubsearchjavapop.ui.main;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.desafio.githubsearchjavapop.R;
 import com.desafio.githubsearchjavapop.data.remote.api.ApiClient;
-import com.desafio.githubsearchjavapop.data.remote.api.GetGithubRepositoriesApi;
+import com.desafio.githubsearchjavapop.data.remote.api.GithubRepoRestApi;
 import com.desafio.githubsearchjavapop.ui.details.DetailsActivity;
 import com.desafio.githubsearchjavapop.ui.main.adapter.RepositoryAdapter;
 import com.desafio.githubsearchjavapop.data.GithubRepositoryImpl;
@@ -43,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GetGithubRepositoriesApi getGithubRepositoriesApi = ApiClient.getClients().create(GetGithubRepositoriesApi.class);
-        presenter = new MainPresenter(this, new GithubRepositoryImpl(getGithubRepositoriesApi));
+        GithubRepoRestApi githubRepoRestApi = ApiClient.getClients().create(GithubRepoRestApi.class);
+        presenter = new MainPresenter(this, new GithubRepositoryImpl(githubRepoRestApi));
 
         initView();
         presenter.onInit();
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void showError() {
-        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Not Find", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.desafio.githubsearchjavapop.data;
 
 import android.util.Log;
 
-import com.desafio.githubsearchjavapop.data.remote.api.GetPullRequest;
+import com.desafio.githubsearchjavapop.data.remote.api.PullRequestRestApi;
 import com.desafio.githubsearchjavapop.model.PullRequestDetail;
 import com.desafio.githubsearchjavapop.utils.Callback;
 
@@ -13,16 +13,16 @@ import retrofit2.Response;
 
 public class GithubPullImpl implements GithubPull {
 
-    GetPullRequest mGetPullRequest;
+    PullRequestRestApi mPullRequestRestApi;
 
-    public GithubPullImpl(GetPullRequest getPullRequest) {
-        mGetPullRequest = getPullRequest;
+    public GithubPullImpl(PullRequestRestApi pullRequestRestApi) {
+        mPullRequestRestApi = pullRequestRestApi;
     }
 
     @Override
     public void getPullRequest(String login, String repoName, final Callback<List<PullRequestDetail>> callback) {
         try {
-            Call<List<PullRequestDetail>> call = mGetPullRequest.getPullRequest(login, repoName);
+            Call<List<PullRequestDetail>> call = mPullRequestRestApi.getPullRequest(login, repoName);
             call.enqueue(new retrofit2.Callback<List<PullRequestDetail>>(){
                 @Override
                 public void onResponse(Call<List<PullRequestDetail>> call, Response<List<PullRequestDetail>> response) {

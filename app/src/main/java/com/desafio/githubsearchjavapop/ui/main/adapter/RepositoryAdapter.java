@@ -44,7 +44,7 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryViewHolder
     @Override
     public int getItemCount()
     {
-        return mRepositoryDetails!=null?mRepositoryDetails.size():0;
+        return mRepositoryDetails != null ? mRepositoryDetails.size() : 0;
     }
 
 

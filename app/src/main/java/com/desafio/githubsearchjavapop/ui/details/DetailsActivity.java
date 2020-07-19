@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.desafio.githubsearchjavapop.R;
 import com.desafio.githubsearchjavapop.data.remote.api.ApiClient;
-import com.desafio.githubsearchjavapop.data.remote.api.GetPullRequest;
+import com.desafio.githubsearchjavapop.data.remote.api.PullRequestRestApi;
 import com.desafio.githubsearchjavapop.data.GithubPullImpl;
 import com.desafio.githubsearchjavapop.model.PullRequestDetail;
 import com.desafio.githubsearchjavapop.ui.details.adapter.PullRequestAdapter;
@@ -34,8 +34,8 @@ public class DetailsActivity extends AppCompatActivity implements DetailsContrac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        GetPullRequest getPullRequest = ApiClient.getClients().create(GetPullRequest.class);
-        presenter = new DetailsPresenter(this, new GithubPullImpl(getPullRequest));
+        PullRequestRestApi pullRequestRestApi = ApiClient.getClients().create(PullRequestRestApi.class);
+        presenter = new DetailsPresenter(this, new GithubPullImpl(pullRequestRestApi));
         String repoName = getIntent().getExtras().getString("name");
         String userLogin = getIntent().getExtras().getString("login");
         initView();

@@ -2,7 +2,7 @@ package com.desafio.githubsearchjavapop.data;
 
 import android.util.Log;
 
-import com.desafio.githubsearchjavapop.data.remote.api.GetGithubRepositoriesApi;
+import com.desafio.githubsearchjavapop.data.remote.api.GithubRepoRestApi;
 import com.desafio.githubsearchjavapop.model.ItemResponse;
 import com.desafio.githubsearchjavapop.model.RepositoryDetail;
 import com.desafio.githubsearchjavapop.utils.Callback;
@@ -14,17 +14,17 @@ import retrofit2.Response;
 
 public class GithubRepositoryImpl implements GithubRepository {
 
-    private GetGithubRepositoriesApi mGetGithubRepositoriesApi;
+    private GithubRepoRestApi mGithubRepoRestApi;
 
-    public GithubRepositoryImpl(GetGithubRepositoriesApi getGithubRepositoriesApi) {
-        mGetGithubRepositoriesApi = getGithubRepositoriesApi;
+    public GithubRepositoryImpl(GithubRepoRestApi githubRepoRestApi) {
+        mGithubRepoRestApi = githubRepoRestApi;
     }
 
 
     @Override
     public void getRepositories(final Callback<List<RepositoryDetail>> callback) {
         try {
-            Call<ItemResponse> call = mGetGithubRepositoriesApi.getItems();
+            Call<ItemResponse> call = mGithubRepoRestApi.getItems();
             call.enqueue(new retrofit2.Callback<ItemResponse>() {
                 @Override
                 public void onResponse(Call<ItemResponse> call, Response<ItemResponse> response) {
