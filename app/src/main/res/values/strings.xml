@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">GithubSearchJavaPop</string>
-    <string name="whithout_connection">No internet connection, Please make sure your device is connected to the internet.</string>
-    <string name="guithublink">GuithubLink</string>
-    <string name="username">Username</string>
-    <string name="github_profile_link">Github Profile Link</string>
+    <string name="username">Mara</string>
+    <string name="nome_do_repositorio">Nome do Repositorio</string>
+    <string name="description">Descricao do repositorio bla bla bla bla bla bla bla bla</string>
+    <string name="total_forks">1974</string>
+    <string name="starts_total">350</string>
+    <string name="nome_do_pullrequest">Nome do PullRequest</string>
+    <string name="pullresquest_description">Descricao do pull request bla bla bla bla bla bla bla bla</string>
+    <string name="username">Mara</string>
+    <string name="date">12/12/2020</string>
+
 </resources>
