@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RepositoryViewHolder extends RecyclerView.ViewHolder {
-    private TextView githubLink, repoName, description, forks, stars, userLogin;
+    private TextView repoName, description, forks, stars, userLogin;
     private CircleImageView userAvatar;
     private OnItemClickedListener mListener;
 
@@ -24,7 +24,6 @@ public class RepositoryViewHolder extends RecyclerView.ViewHolder {
 
     public RepositoryViewHolder(@NonNull final View view) {
         super(view);
-        githubLink = view.findViewById(R.id.act_row_githubLink_tv);
         repoName = view.findViewById(R.id.act_rowPull_pr_title_tv);
         description = view.findViewById(R.id.act_rowPull_descriptionPR_tv);
         forks = view.findViewById(R.id.act_row_forkTotal_tv);
@@ -39,7 +38,6 @@ public class RepositoryViewHolder extends RecyclerView.ViewHolder {
         forks.setText(repositoryDetail.getForksCount());
         stars.setText(repositoryDetail.getStargazersCount());
         userLogin.setText(repositoryDetail.getOwner().getLogin());
-        githubLink.setText(repositoryDetail.getOwner().getHtmlUrl());
 
         Picasso.with(itemView.getContext())
                 .load(repositoryDetail.getOwner().getAvatarUrl())
